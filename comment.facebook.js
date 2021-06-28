@@ -30,3 +30,4 @@ function submitComment(type, element) {
 }
 writeComment(document.querySelector('[role="presentation"] [contenteditable]'), 'TEST1234\nTEST1234')
 submitComment('keydown', document.querySelector('[role="presentation"] [contenteditable]'));
+//Với thằng Facebook này thì bạn dùng DataTransfer, ClipboardEvent (2 constructors này bạn tự research). Sau đó đứng tại element của input comment (bạn mò CSS selector của FB để lấy được nó) và call method dispatchEvent để dispatch "paste" event. Cách này bạn có thể hiểu là kích hoạt một sự kiện paste content vào ô comment, draftjs sẽ xử lý hành vi này tương tự end-user paste thật. Chúc bạn làm được nhé.
